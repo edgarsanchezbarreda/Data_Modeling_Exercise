@@ -20,12 +20,7 @@ CREATE TABLE planets
 CREATE TABLE moons (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
-  planet
-);
-
-CREATE TABLE planet_moons (
-  planet_id INTEGER REFERENCES planets(id) ON DELETE CASCADE,
-  moon_id INTEGER REFERENCES moons(id) ON DELETE CASCADE
+  planet_id INTEGER REFERENCES planets(id) ON DELETE CASCADE
 );
 
 INSERT INTO planets
@@ -38,29 +33,23 @@ VALUES
   ('Proxima Centauri b', 0.03, 'Proxima Centauri', 'Milky Way', FALSE),
   ('Gliese 876 b', 0.23, 'Gliese 876', 'Milky Way', FALSE);
 
-INSERT INTO moons (name)
+INSERT INTO moons (name, planet_id)
 VALUES
-('The Moon'),
-('Phobos'),
-('Deimos'),
-('Naiad'),
-('Thalassa'),
-('Despina'),
-('Galatea'),
-('Larissa'),
-('S/2004 N 1'),
-('Proteus'),
-('Triton'),
-('Nereid'),
-('Halimede'),
-('Sao'),
-('Laomedeia'),
-('Psamathe'),
-('Neso');
-
-INSERT INTO planet_moons(planet_id, moon_id)
-VALUES
-(1, 1),
-(2,2), (2,3),
-(4,4), (4,5), (4,6), (4,7), (4,8), (4,9), (4,10), (4,11), (4,12), (4,13), (4,14), (4,15), (4,16), (4,17);
+('The Moon', 1),
+('Phobos', 2),
+('Deimos', 2),
+('Naiad', 4),
+('Thalassa', 4),
+('Despina', 4),
+('Galatea', 4),
+('Larissa', 4),
+('S/2004 N 1', 4),
+('Proteus', 4),
+('Triton', 4),
+('Nereid', 4),
+('Halimede', 4),
+('Sao', 4),
+('Laomedeia', 4),
+('Psamathe', 4),
+('Neso', 4);
 
