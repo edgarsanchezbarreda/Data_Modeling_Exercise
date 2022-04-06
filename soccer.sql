@@ -43,7 +43,7 @@ CREATE TABLE goals_scored (
 
 CREATE TABLE season_dates(
     id SERIAL PRIMARY KEY,
-    divison TEXT UNIQUE NOT NULL,
+    division TEXT UNIQUE NOT NULL,
     start TEXT NOT NULL,
     end_season TEXT NOT NULL
 );
@@ -76,6 +76,14 @@ VALUES('2020-05-05', 1, 3, 2, TRUE),
 ('2020-06-16', 2, 4, 1, TRUE),
 ('2020-12-25', 1, 4, 1, FALSE),
 ('2021-01-01', 3, 2, 2, TRUE);
+
+INSERT INTO goals_scored (player_id, team_id, match_id, time)
+VALUES
+(1, 3, 1, '20:01'),
+(2, 1, 1, '45:35'),
+(2, 1, 1, '56:56'),
+(3,2,2,'20:45'),
+(2,2,4,'45:16');
 
 INSERT INTO season_dates (division, start, end_season)
 VALUES 
